@@ -33,30 +33,54 @@ console.log(multiply1(2));
 // cách 3 không cần dùng return, không dùng dấu ()
 const multiply2 = number => number*2;
 console.log(multiply2(2));
-// class 
+// // class ES6
+// //tạo một lớp Human
+// class Human {
+//     //hàm khởi tạo
+//     constructor() {
+//         this.gender = "male"
+//     }
+//     //phương thức
+//     printGender() {
+//         console.log(this.gender)
+//     }
+// }
+// //tạo một peson kế thừa Human
+// class Peson extends Human {
+//     constructor() {
+//         // khai bao lại biến cha
+//         super()
+//         //sẻ có thuộc tính mới
+//         this.name = "yến"
+//         //ghi đè lại thuộc tính cũ
+//         this.gender = "female"
+//     }
+//     //có thêm thương thức mới
+//     printName() {
+//         console.log(this.name)
+//     }
+// }
+// //khai bao tạo một người mới
+// const peson = new Peson();
+// //gọi các phương thức
+// peson.printName();
+// peson.printGender();
+// class ES7 hiện đại và ngắn gọn hơn
 //tạo một lớp Human
 class Human {
     //hàm khởi tạo
-    constructor() {
-        this.gender = "male"
-    }
+    gender = "male"
     //phương thức
-    printGender() {
+    printGender = () => {
         console.log(this.gender)
     }
 }
 //tạo một peson kế thừa Human
 class Peson extends Human {
-    constructor() {
-        // khai bao lại biến cha
-        super()
-        //sẻ có thuộc tính mới
-        this.name = "yến"
-        //ghi đè lại thuộc tính cũ
-        this.gender = "female"
-    }
+    name = "yến"
+    gender = "female"
     //có thêm thương thức mới
-    printName() {
+    printName = ()=> {
         console.log(this.name)
     }
 }
