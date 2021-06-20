@@ -5,8 +5,8 @@
 // const myName = "yến"
 // //myName ='kim yen';
 // console.log(myName);
-//const không thay đổi định nghĩa được 1 lần(hằng)
-//Bài 02 arrow funtion
+// const không thay đổi định nghĩa được 1 lần(hằng)
+// Bài 02 arrow funtion
 const printMyName = (name) => {
     console.log(name);
 }
@@ -32,5 +32,36 @@ const multiply1 = (number) => number*2;
 console.log(multiply1(2));
 // cách 3 không cần dùng return, không dùng dấu ()
 const multiply2 = number => number*2;
-
 console.log(multiply2(2));
+// class 
+//tạo một lớp Human
+class Human {
+    //hàm khởi tạo
+    constructor() {
+        this.gender = "male"
+    }
+    //phương thức
+    printGender() {
+        console.log(this.gender)
+    }
+}
+//tạo một peson kế thừa Human
+class Peson extends Human {
+    constructor() {
+        // khai bao lại biến cha
+        super()
+        //sẻ có thuộc tính mới
+        this.name = "yến"
+        //ghi đè lại thuộc tính cũ
+        this.gender = "female"
+    }
+    //có thêm thương thức mới
+    printName() {
+        console.log(this.name)
+    }
+}
+//khai bao tạo một người mới
+const peson = new Peson();
+//gọi các phương thức
+peson.printName();
+peson.printGender();
