@@ -1,0 +1,36 @@
+//Bài 01 let và const
+// let name = "yến"
+// name ='kim yen';
+// console.log(name);
+// const myName = "yến"
+// //myName ='kim yen';
+// console.log(myName);
+//const không thay đổi định nghĩa được 1 lần(hằng)
+//Bài 02 arrow funtion
+const printMyName = (name) => {
+    console.log(name);
+}
+//sử dụng 1 đối số có thể không cần dấu ()
+printMyName('yen');
+const printMyName1 = name => {
+    console.log(name);
+}
+printMyName1('yen');
+//dùng 2 đối sổ trở lên cần dấu ()
+const printMyName2 = (name,age) => {
+    console.log(name,age);
+}
+printMyName2('yen',21);
+// cách 1
+const multiply = (number) => {
+    return number*2;
+}
+console.log(multiply(2));
+// cách 2 không cần dùng return
+const multiply1 = (number) => number*2;
+
+console.log(multiply1(2));
+// cách 3 không cần dùng return, không dùng dấu ()
+const multiply2 = number => number*2;
+
+console.log(multiply2(2));
