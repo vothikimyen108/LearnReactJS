@@ -1,2 +1,2 @@
  export const clean =() => {};
- export const baseDate = 10;
+ export const baseData = 10;
