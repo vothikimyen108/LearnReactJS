@@ -45,7 +45,7 @@ console.log(multiply2(2));
 //         console.log(this.gender)
 //     }
 // }
-// //tạo một peson kế thừa Human
+// //tạo một person kế thừa Human
 // class Peson extends Human {
 //     constructor() {
 //         // khai bao lại biến cha
@@ -61,10 +61,10 @@ console.log(multiply2(2));
 //     }
 // }
 // //khai bao tạo một người mới
-// const peson = new Peson();
+// const person = new Person();
 // //gọi các phương thức
-// peson.printName();
-// peson.printGender();
+// person.printName();
+// person.printGender();
 // class ES7 hiện đại và ngắn gọn hơn
 //tạo một lớp Human
 class Human {
@@ -76,7 +76,7 @@ class Human {
     }
 }
 //tạo một peson kế thừa Human
-class Peson extends Human {
+class Person extends Human {
     name = "yến"
     gender = "female"
     //có thêm thương thức mới
@@ -87,5 +87,5 @@ class Peson extends Human {
 //khai bao tạo một người mới
 const peson = new Peson();
 //gọi các phương thức
-peson.printName();
-peson.printGender();
+person.printName();
+person.printGender();

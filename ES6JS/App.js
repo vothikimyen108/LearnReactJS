@@ -1,6 +1,6 @@
 //default export 
-// import person from "./Peson";
-// import prs from "./Peson";
+// import person from "./Person";
+// import prs from "./Person";
 //name export
 // import './package.json'
 import { baseData } from "./utilyty.js";
