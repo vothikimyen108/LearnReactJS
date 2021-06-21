@@ -2,7 +2,7 @@
 const num1 = 1;
 const num2 = num1; //1
 console.log(num2)
-//nếu kiểu object , array no sẻ tham chiếu trỏ đến cùng đối tượng đó
+//nếu kiểu object , array nó sẻ tham chiếu trỏ đến cùng đối tượng đó
 const person = {
     name:'yen'
 }

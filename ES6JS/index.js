@@ -84,7 +84,7 @@ class Person extends Human {
         console.log(this.name)
     }
 }
-//khai bao tạo một người mới
+//khai báo tạo một người mới
 const peson = new Peson();
 //gọi các phương thức
 person.printName();
