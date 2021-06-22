@@ -1,6 +1,7 @@
 //import css
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate.js";
+import Card from "./Card";
 //tạo hàm mới expense ra item h2
 function ExpenseItem(props) {
   //   //khai báo các biến
@@ -15,13 +16,13 @@ function ExpenseItem(props) {
   //dùng dấu {} để thêm các biến bên ngoài, date là một đối tượng cần chuyển về tostring
   //dùng props để hiện thị
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <ExpenseDate date ={props.date}/>
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 export default ExpenseItem;
