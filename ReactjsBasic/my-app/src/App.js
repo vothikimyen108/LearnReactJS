@@ -1,5 +1,5 @@
 //import vào sài
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 import "./App.css";
 import react from "react"
 // khai báo 1 mảng gồm các object expense

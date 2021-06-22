@@ -1,7 +1,7 @@
 //import css
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate.js";
-import Card from "./Card";
+import Card from "../UI/Card";
 //tạo hàm mới expense ra item h2
 function ExpenseItem(props) {
   //   //khai báo các biến
