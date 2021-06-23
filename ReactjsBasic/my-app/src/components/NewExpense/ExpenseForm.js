@@ -2,34 +2,45 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 const ExpenseForm = () => {
   //sủ dụng khai báo nhiều state
-  // const [enterTitle,setExterTitle] = useState('');
-  // const [enterAmount,setEnterAmount] = useState('');
-  // const [enterDate,setExterDate] = useState('');
+  const [enterTitle,setExterTitle] = useState('');
+  const [enterAmount,setEnterAmount] = useState('');
+  const [enterDate,setExterDate] = useState('');
   //cách khách sử dụng nhiều state
-  const [userInput, setUserInput] = useState({
-    enterTitle: "",
-    enterAmount: "",
-    enterDate: "",
-  });
+//   const [userInput, setUserInput] = useState({
+//     enterTitle: "",
+//     enterAmount: "",
+//     enterDate: "",
+//   });
 
   //khai báo các hàm
   const changeHandlerTitle = (Event) => {
-    setUserInput({
-      ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
-      enterTitle: Event.target.value,
-    });
+    setExterTitle(Event.target.value)
+    //nó phụ thuộc vào trạng thái trước đó
+    // setUserInput({
+    //   ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
+    //   enterTitle: Event.target.value,
+    // });
+    //có cách thêm hàm
+    // setUserInput((preState) => {
+    //   return {
+    //     ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
+    //     enterTitle: Event.target.value,
+    //   };
+    // });
   };
   const changeHandlerAmount = (Event) => {
-    setUserInput({
-      ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
-      enterAmount: Event.target.value,
-    });
+    setEnterAmount(Event.target.value)
+    // setUserInput({
+    //   ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
+    //   enterAmount: Event.target.value,
+    // });
   };
   const changeHandlerDate = (Event) => {
-    setUserInput({
-      ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
-      enterDate: Event.target.value,
-    });
+    setExterDate(Event.target.value)
+    // setUserInput({
+    //   ...userInput, //sao chép lại các giá trị đầu để mấy thuoocj tính còn lại khôn mất
+    //   enterDate: Event.target.value,
+    // });
   };
 
   return (
