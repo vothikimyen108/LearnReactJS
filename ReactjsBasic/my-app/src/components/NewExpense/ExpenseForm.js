@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-const ExpenseForm = () => {
+const ExpenseForm = (prop) => {
   //sủ dụng khai báo nhiều state
   const [enterTitle,setExterTitle] = useState('');
   const [enterAmount,setEnterAmount] = useState('');
@@ -53,10 +53,15 @@ const ExpenseForm = () => {
       amount:enterAmount,
       date:new Date(enterDate)
     }
+    //thêm 
+    prop.onExpenseNew(expenseData);
     //xóa các value trên input
     setExterTitle('');
     setEnterAmount('');
     setExterDate('');
+    
+
+
   }
   return (
     <form onSubmit={submitHandler}>

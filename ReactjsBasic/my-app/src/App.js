@@ -3,7 +3,10 @@ import Expenses from "./components/Expense/Expenses";
 import "./App.css";
 //import react from "react"
 import NewExpense from "./components/NewExpense/NewExpense";
-// khai báo 1 mảng gồm các object expense
+
+
+function App() {
+  // khai báo 1 mảng gồm các object expense
 const expenses = [
   {
     id: "e1",
@@ -25,13 +28,19 @@ const expenses = [
     date: new Date(2021, 5, 12),
   },
 ];
-function App() {
+//hàm
+const handlerCreateExpenData = (newExpenses) => {
+  const expense = {
+    ...newExpenses
+  }
+  console.log(expense);
+};
   // viết jsx tiện hơn
   return (
     <div className="App">
       <header className="App-header">
-        <NewExpense></NewExpense>
-        <Expenses items={expenses}/>
+        <NewExpense onCreateExpenseData = {handlerCreateExpenData}></NewExpense>
+        <Expenses items={expenses} />
       </header>
     </div>
   );
