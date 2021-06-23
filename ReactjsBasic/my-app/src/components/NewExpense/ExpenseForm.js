@@ -43,12 +43,27 @@ const ExpenseForm = () => {
     // });
   };
 
+  //ham khi submit
+  const submitHandler = (event) => {
+    //Event.preventDefault sẽ đảm bảo rằng form không bao giờ được gửi, và nó đã giành được quyền kiểm soát và ngăn chặn sự kiện đó khi click
+    event.preventDefault();
+    //tạo một đối tượng mới
+    const expenseData = {
+      title:enterTitle,
+      amount:enterAmount,
+      date:new Date(enterDate)
+    }
+    //xóa các value trên input
+    setExterTitle('');
+    setEnterAmount('');
+    setExterDate('');
+  }
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={changeHandlerTitle} />
+          <input type="text" onChange={changeHandlerTitle}  value={enterTitle}/>
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -56,7 +71,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
-            onChange={changeHandlerAmount}
+            onChange={changeHandlerAmount} value={enterAmount}
           />
         </div>
         <div className="new-expense__control">
@@ -65,7 +80,7 @@ const ExpenseForm = () => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            onChange={changeHandlerDate}
+            onChange={changeHandlerDate} value ={enterDate}
           />
         </div>
       </div>
