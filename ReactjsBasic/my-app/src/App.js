@@ -1,7 +1,8 @@
 //import vào sài
-import Expenses from "./components/Expenses/Expenses";
+import Expenses from "./components/Expense/Expenses";
 import "./App.css";
-import react from "react"
+//import react from "react"
+import NewExpense from "./components/NewExpense/NewExpense";
 // khai báo 1 mảng gồm các object expense
 const expenses = [
   {
@@ -26,15 +27,16 @@ const expenses = [
 ];
 function App() {
   // viết jsx tiện hơn
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <Expenses items={expenses}/>
-  //     </header>
-  //   </div>
-  // );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <NewExpense></NewExpense>
+        <Expenses items={expenses}/>
+      </header>
+    </div>
+  );
   //viết bằng react để hiểu cấu trúc
-  return react.createElement('div',{},react.createElement(Expenses,{items:expenses}));
+ // return react.createElement('div',{},react.createElement(Expenses,{items:expenses}));
 }
 
 export default App;
