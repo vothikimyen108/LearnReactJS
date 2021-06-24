@@ -3,7 +3,7 @@ import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate.js";
 import Card from "../UI/Card";
 //import statr
-import React, { useState } from "react";
+// import React, { useState } from "react";
 //tạo hàm mới expense ra item h2
 const ExpenseItem = (props) => {
   //   //khai báo các biến
@@ -18,20 +18,20 @@ const ExpenseItem = (props) => {
   //dùng dấu {} để thêm các biến bên ngoài, date là một đối tượng cần chuyển về tostring
   //dùng props để hiện thị
   //học state
-  const [title, setTitle] = useState(props.title); // khai báo sử dụng state như là mảng nhận 2 giá trị title là giả hiện tại settitle là thay đổ giá trị
+  //const [title, setTitle] = useState(props.title); // khai báo sử dụng state như là mảng nhận 2 giá trị title là giả hiện tại settitle là thay đổ giá trị
   // //tạo hàm thay đổi giá trị
-  function handClick() {
-    setTitle("update!!");
-    console.log(title);
-  }
+  // function handClick() {
+  //   setTitle("update!!");
+  //   console.log(title);
+  // }
   //gọi biến title ra sử dụng
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
-        <button onClick={handClick}>click</button>
+        {/* <button onClick={handClick}>click</button> */}
       </div>
     </Card>
   );
