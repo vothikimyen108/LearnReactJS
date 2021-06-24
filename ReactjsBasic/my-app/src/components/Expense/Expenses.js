@@ -1,8 +1,9 @@
 import "./Expenses.css";
-import ExpenseItem from "./ExpenseItem";
+
 import ExpensesFilter from "./ExpenseFilter";
 import Card from "../UI/Card";
 import React, { useState } from "react";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (prop) => {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -14,18 +15,18 @@ const Expenses = (prop) => {
     return item.date.getFullYear().toString() === filteredYear;
   });
 
-  //khai báo biến let nội dung
-  let expenseContent = <p>No Expenses</p>;
-  //nếu lọc các item expen theo năm thì thay đổi nội dung xuất ra
-  if (filterExpenseByYear.length > 0)
-    expenseContent = filterExpenseByYear.map((expense) => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-      ></ExpenseItem>
-    ));
+  // //khai báo biến let nội dung
+  // let expenseContent = <p>No Expenses</p>;
+  // //nếu lọc các item expen theo năm thì thay đổi nội dung xuất ra
+  // if (filterExpenseByYear.length > 0)
+  //   expenseContent = filterExpenseByYear.map((expense) => (
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //     ></ExpenseItem>
+  //   ));
 
   return (
     <Card className="expenses">
@@ -33,7 +34,8 @@ const Expenses = (prop) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {expenseContent}
+      {/* {expenseContent} */}
+      <ExpensesList items={filterExpenseByYear}></ExpensesList>
       {/* dung array map render ra các item */}
       {/* them key xác định chỉ mục phân biệt các đứa con */}
       {/* {prop.items.map( (expense) => (

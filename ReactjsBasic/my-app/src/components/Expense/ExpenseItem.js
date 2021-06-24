@@ -26,14 +26,17 @@ const ExpenseItem = (props) => {
   // }
   //gọi biến title ra sử dụng
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-        {/* <button onClick={handClick}>click</button> */}
-      </div>
-    </Card>
+    <li>
+        <Card className="expense-item">
+          <ExpenseDate date={props.date} />
+          <div className="expense-item__description">
+            <h2>{props.title}</h2>
+            <div className="expense-item__price">${props.amount}</div>
+            {/* <button onClick={handClick}>click</button> */}
+          </div>
+        </Card>
+    
+    </li>
   );
 };
 export default ExpenseItem;
