@@ -3,11 +3,10 @@ import Expenses from "./components/Expense/Expenses";
 import "./App.css";
 //import react from "react"
 import NewExpense from "./components/NewExpense/NewExpense";
+import React, {useState} from "react";
 
-
-function App() {
-  // khai báo 1 mảng gồm các object expense
-const expenses = [
+// khai báo 1 mảng gồm các object expense
+const DUMM_EXPENSES = [
   {
     id: "e1",
     title: "Toilet Paper",
@@ -28,14 +27,15 @@ const expenses = [
     date: new Date(2021, 5, 12),
   },
 ];
-//hàm
-//Lifting State Up khái niệm truyền dữ liệu từ cha qua con từ con qua cha, qua prop
-const handlerCreateExpenData = (newExpenses) => {
-  const expense = {
-    ...newExpenses
-  }
-  console.log(expense);
-};
+
+function App() {
+
+  const [expenses, setExpenses] = useState(DUMM_EXPENSES)
+  //Lifting State Up khái niệm truyền dữ liệu từ cha qua con từ con qua cha, qua prop
+  const handlerCreateExpenData = (newExpense) => {
+    setExpenses(preExpense => { return [...preExpense,newExpense]}); //dung preExpense lấy đc dữ liệu cũ hơn =)) hông hiểu lắm
+
+  };
   // viết jsx tiện hơn
   return (
     <div className="App">
@@ -46,7 +46,7 @@ const handlerCreateExpenData = (newExpenses) => {
     </div>
   );
   //viết bằng react để hiểu cấu trúc
- // return react.createElement('div',{},react.createElement(Expenses,{items:expenses}));
+  // return react.createElement('div',{},react.createElement(Expenses,{items:expenses}));
 }
 
 export default App;
