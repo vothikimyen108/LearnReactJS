@@ -49,10 +49,10 @@ const ExpenseForm = (prop) => {
     event.preventDefault();
     //tạo một đối tượng mới
     const expenseData = {
-      title:enterTitle,
-      amount:enterAmount,
-      date:new Date(enterDate)
-    }
+      title: enterTitle,
+      amount: +enterAmount, //thêm + để chuyển thành số
+      date: new Date(enterDate),
+    };
     //thêm 
     prop.onExpenseNew(expenseData);
     //xóa các value trên input
