@@ -1,26 +1,49 @@
-import './Expenses.css'
+import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
-import ExpensesFilter from './ExpenseFilter';
-import Card from '../UI/Card';
-import React, {useState} from 'react';
+import ExpensesFilter from "./ExpenseFilter";
+import Card from "../UI/Card";
+import React, { useState } from "react";
 
 const Expenses = (prop) => {
-  const [filteredYear, setFilteredYear] = useState('2020');
-  const filterChangeHandler = (selectYear)=> {
-    setFilteredYear(selectYear)
-  }
+  const [filteredYear, setFilteredYear] = useState("2020");
+  const filterChangeHandler = (selectYear) => {
+    setFilteredYear(selectYear);
+  };
+  //lọc expense theo năm
+  const filterExpenseByYear = prop.items.filter((item) => {
+    return item.date.getFullYear().toString() === filteredYear;
+  });
 
-  return (
-    <Card className="expenses">
-      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-      {/* dung array map render ra các item */}
-      {prop.items.map( (expense) => (
-        <ExpenseItem
+  //khai báo biến let nội dung
+  let expenseContent = <p>No Expenses</p>;
+  //nếu lọc các item expen theo năm thì thay đổi nội dung xuất ra
+  if (filterExpenseByYear.length > 0)
+    expenseContent = filterExpenseByYear.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
         title={expense.title}
         amount={expense.amount}
         date={expense.date}
       ></ExpenseItem>
-      ))} 
+    ));
+
+  return (
+    <Card className="expenses">
+      <ExpensesFilter
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
+      {expenseContent}
+      {/* dung array map render ra các item */}
+      {/* them key xác định chỉ mục phân biệt các đứa con */}
+      {/* {prop.items.map( (expense) => (
+        <ExpenseItem
+        key={expense.id} 
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      ></ExpenseItem>
+      ))}  */}
       {/* <ExpenseItem
         title={prop.items[0].title}
         amount={prop.items[0].amount}
@@ -43,5 +66,5 @@ const Expenses = (prop) => {
       ></ExpenseItem> */}
     </Card>
   );
-}
+};
 export default Expenses;
