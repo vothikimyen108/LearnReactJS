@@ -22,19 +22,21 @@ const CourseInput = (props) => {
     }
     props.onAddGoal(enteredValue);
   };
-  //dùng stlyling thông báo nếu nhập sai
+  //dùng stlyling thông báo nếu nhập sai 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
+      {/* cách dùng css thêm vào class invalid */}
+      <div className={`form-control  ${!isValid ? 'invalid': ''}`}>
+        <label>Course Goal</label>
+        {/* <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
         <input
           type="text"
           onChange={goalInputChangeHandler}
           style={{
             color: !isValid ? "red" : "black",
             background: !isValid ? "salmon" : "transparent",
-          }}
-        />
+          }} */}
+        <input type="text"  onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
