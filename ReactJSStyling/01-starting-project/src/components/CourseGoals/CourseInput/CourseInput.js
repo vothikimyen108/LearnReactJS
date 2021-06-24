@@ -9,7 +9,7 @@ const CourseInput = (props) => {
   const [isValid, setIsValid] = useState(true);
   const goalInputChangeHandler = (event) => {
     //nếu có gõ kí tự thì đúng
-    if (event.target.valuetrim().length > 0) setIsValid(true);
+    if (event.target.value.trim().length > 0) setIsValid(true);
     setEnteredValue(event.target.value);
   };
 
@@ -18,4 +18,27 @@ const CourseInput = (props) => {
     //nếu không nhận đc kết quả thì false
     if (enteredValue.trim().length === 0) {
       setIsValid(false);
-  
+      return;
+    }
+    props.onAddGoal(enteredValue);
+  };
+  //dùng stlyling thông báo nếu nhập sai
+  return (
+    <form onSubmit={formSubmitHandler}>
+      <div className="form-control">
+        <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
+        <input
+          type="text"
+          onChange={goalInputChangeHandler}
+          style={{
+            color: !isValid ? "red" : "black",
+            background: !isValid ? "salmon" : "transparent",
+          }}
+        />
+      </div>
+      <Button type="submit">Add Goal</Button>
+    </form>
+  );
+};
+
+export default CourseInput;
