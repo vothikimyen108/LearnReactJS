@@ -29,6 +29,7 @@ const expenses = [
   },
 ];
 //hàm
+//Lifting State Up khái niệm truyền dữ liệu từ cha qua con từ con qua cha, qua prop
 const handlerCreateExpenData = (newExpenses) => {
   const expense = {
     ...newExpenses
