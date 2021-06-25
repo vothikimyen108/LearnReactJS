@@ -2,7 +2,7 @@ import Card from "../UI/Card";
 import style from "./AddUser.module.css";
 import Button from "../UI/Button";
 import React, { useState } from "react";
-const AddUser = () => {
+const AddUser = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -15,7 +15,9 @@ const AddUser = () => {
     }
     if (enteredAge.trim() < 1) return;
     //xuất kết quả thử
-    console.log(enteredAge, enteredName);
+    // console.log(enteredAge, enteredName);
+    //truyền 2 đứa này lên hàm mẹ thông quá state onAddUser
+    props.onAddUser(enteredName,  enteredAge);;
     setEnteredAge("");
     setEnteredName("");
   };
