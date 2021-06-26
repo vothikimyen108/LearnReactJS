@@ -25,13 +25,16 @@ function App() {
       ];
     });
   };
+  //cách dùng Fragment <> <.> ,React.Fragment , Fragment
   return (
-    <div className="App">
-      <header className="App-header">
-        <AddUser onAddUser={addUserHandler}></AddUser>
-        <UserList users={usersList} />
-      </header>
-    </div>
+    <React.Fragment>
+          <div className="App">
+            <header className="App-header">
+              <AddUser onAddUser={addUserHandler}></AddUser>
+              <UserList users={usersList} />
+            </header>
+          </div>
+    </React.Fragment>
   );
 }
 
