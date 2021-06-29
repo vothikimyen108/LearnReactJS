@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
@@ -10,21 +10,28 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+ //nếu dùng dependencies. vơi mảng [] thì hàm dưới đây k hoạt động vì hàm đó đc gọi 1 lần
+ //ta cần chuyền các dependencies vô để khi nó thay đổi thì hàm đó đc gọi
+  useEffect(()=>{
+    setFormIsValid(
+      enteredEmail.includes('@') && enteredPassword.trim().length > 6
+    );
+  },[enteredEmail,enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
 
-    setFormIsValid(
-      event.target.value.includes('@') && enteredPassword.trim().length > 6
-    );
+    // setFormIsValid(
+    //   event.target.value.includes('@') && enteredPassword.trim().length > 6
+    // );
   };
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
 
-    setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes('@')
-    );
+    // setFormIsValid(
+    //   event.target.value.trim().length > 6 && enteredEmail.includes('@')
+    // );
   };
 
   const validateEmailHandler = () => {
