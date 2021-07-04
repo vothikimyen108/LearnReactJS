@@ -6,7 +6,7 @@ const Input = (props) => {
   return (
     <div className={classe.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input}></input>
+      <input {...props.input} onChange={props.onChange}></input>
       {/* id={props.input.id} */}
     </div>
   );
