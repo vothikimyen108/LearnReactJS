@@ -8,6 +8,8 @@ const MealsItemForm = (props) => {
     event.preventDefault();
     const enteredAmountNumber = +inputValue;
     props.onAddToCart(enteredAmountNumber);
+    //thêm vô giỏ quay lại là 1
+    setInputValue(+(+1));
   };
   const handerChangeInput = (event) => {
     setInputValue(+(event.target.value));
@@ -16,18 +18,17 @@ const MealsItemForm = (props) => {
     <form className={classes.form} onSubmit={handerSubmit}>
       <Input
         label="Amount"
-        onChange= {handerChangeInput}
+        onChange={handerChangeInput}
         input={{
           id: "amount_" + props.id, // this changed!
           type: "number",
           min: "1",
           max: "5",
           step: "1",
-          defaultValue: "1",
-         
-        }  }
+          defaultValue: `${inputValue}`,
+        }}
       />
-      <button >+ Add</button>
+      <button>+ Add</button>
     </form>
   );
 };
