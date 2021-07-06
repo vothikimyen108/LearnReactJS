@@ -27,9 +27,9 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 Đều nhận vào 2 tham số: function và dependencies.
 Đều là react hooks, dùng cho functional component.
 Dùng để hạn chế những lần re-render dư thừa (micro improvements).
+
 ** Khác nhau **
-return memoized callback memoized value
-code useCallback((type) => {}, []) useMemo(() => [{}, {}, {}], [])
+
 | useCallback  | useMemo|
 | ------:| -----------:|
 | trả về memoized hàm  | trả về memoized giá trị |
