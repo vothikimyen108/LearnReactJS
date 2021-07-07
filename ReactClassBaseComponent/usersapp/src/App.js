@@ -1,6 +1,6 @@
-import Users from "./components/Users";
+import UserFinder from "./components/UserFinder";
 function App() {
-  return <Users></Users>;
+  return <UserFinder></UserFinder>;
 }
 
 export default App;

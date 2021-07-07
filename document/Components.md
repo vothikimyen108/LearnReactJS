@@ -158,5 +158,5 @@ class Home extends PureComponent {
 }
 ```
 >
->bạn  **không nên gọi `setState()`**  trong `componentWillUnmount()` vì thành phần sẽ không bao giờ được hiển thị lại. Sau khi một cá thể thành phần được ngắt kết nối, nó sẽ không bao giờ được gắn kết lại.
+>**không nên gọi `setState()`**  trong `componentWillUnmount()` vì thành phần sẽ không bao giờ được hiển thị lại. Sau khi một cá thể thành phần được ngắt kết nối, nó sẽ không bao giờ được gắn kết lại.
 >
