@@ -3,13 +3,11 @@ import { Fragment, Component } from "react";
 import Users from "./Users";
 import classes from "./UserFinder.module.css";
 
-const DUMMY_USERS = [
-  { id: "u1", name: "Max" },
-  { id: "u2", name: "Manuel" },
-  { id: "u3", name: "Julie" },
-];
+import UsersContext from "../context/UserContext";
 
 class UserFinder extends Component {
+  //tạo ra 1 biết dễ sử dụng
+  static contextType = UsersContext;
   constructor() {
     super();
     this.state = {
@@ -21,14 +19,14 @@ class UserFinder extends Component {
   //khi bắt đầu filteredUsers truyền mảng vào
   componentDidMount() {
     // Send http request...
-    this.setState({ filteredUsers: DUMMY_USERS });
+    this.setState({ filteredUsers: this.context.users });
   }
   // dung didupdate thay đổi state khi searchTerm thay đổi
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchTerm !== this.state.searchTerm) {
       console.log(this.state.filteredUsers);
       this.setState({
-        filteredUsers: DUMMY_USERS.filter((user) =>
+        filteredUsers: this.context.users.filter((user) =>
           user.name.includes(this.state.searchTerm),
         ),
       });
