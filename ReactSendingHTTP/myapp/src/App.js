@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-import MoviesList from './components/MoviesList';
-import './App.css';
+import MoviesList from "./components/MoviesList";
+import "./App.css";
 
 function App() {
   // const dummyMovies = [
@@ -19,23 +19,38 @@ function App() {
   //   },
   // ];
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
   //đùn fetch để gọi api
-  function fetchHanderMove() {
-    fetch('https://swapi.dev/api/films/')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const transformedMovies = data.results.map((movieData) => {
-          return {
-            id: movieData.episode_id,
-            title: movieData.title,
-            openingText: movieData.opening_crawl,
-            releaseDate: movieData.release_date,
-          };
-        });
-        setMovies(transformedMovies);
-      });
+  //hàm bất động bộ thực chạy song song
+  async function fetchHanderMove() {
+    setLoading("true");
+    //  fetch('https://swapi.dev/api/films/')
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((data) => {
+    //       const transformedMovies = data.results.map((movieData) => {
+    //         return {
+    //           id: movieData.episode_id,
+    //           title: movieData.title,
+    //           openingText: movieData.opening_crawl,
+    //           releaseDate: movieData.release_date,
+    //         };
+    //       });
+    //       setMovies(transformedMovies);
+    //     });
+    const reponse = await fetch("https://swapi.dev/api/films/");
+    const data = await reponse.json();
+    const transformedMovies = data.results.map((movieData) => {
+      return {
+        id: movieData.episode_id,
+        title: movieData.title,
+        openingText: movieData.opening_crawl,
+        releaseDate: movieData.release_date,
+      };
+    });
+    setMovies(transformedMovies);
+    setLoading(false);
   }
 
   return (
@@ -44,7 +59,9 @@ function App() {
         <button onClick={fetchHanderMove}>Fetch Movies</button>
       </section>
       <section>
-        <MoviesList movies={movies} />
+        {!loading && movies.length > 0 && <MoviesList movies={movies} />}
+        {!loading && movies.length === 0 && <p>Not found</p>}
+        {loading && <p>loading</p>}
       </section>
     </React.Fragment>
   );
