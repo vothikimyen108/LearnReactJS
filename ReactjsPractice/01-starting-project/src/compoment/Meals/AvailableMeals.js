@@ -30,11 +30,18 @@ import MealItem from "./MealItem/MealItem";
 // ];
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+  const [loaded, setLoaded] = useState(true);
+  const [httpError, setHttpError] = useState();
   useEffect(() => {
+    setLoaded(true);
     const fetchMeals = async () => {
       const response = await fetch(
         "https://meal-7e0a4-default-rtdb.firebaseio.com/Meals.json",
       );
+      //  nếu xẩy ra lỗi thì ném ra ngoại lệ mới
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
       const responseData = await response.json();
 
       const loadedMeals = [];
@@ -48,11 +55,30 @@ const AvailableMeals = () => {
         });
       }
 
+      setLoaded(false);
       setMeals(loadedMeals);
     };
 
-    fetchMeals();
+    fetchMeals().catch((error) => {
+      setLoaded(false);
+      setHttpError(error.message);
+    });
   }, []);
+  //code loading
+  if (loaded) {
+    return (
+      <section className={classes.meals}>
+        <p>loading</p>
+      </section>
+    );
+  }
+  if (httpError) {
+    return (
+      <section className={classes.meals}>
+        <p>{httpError}aa</p>
+      </section>
+    );
+  }
   const mealsList = meals.map((item) => {
     return (
       <MealItem
