@@ -56,6 +56,3 @@ function Counter() {
 | Dễ sử dụng/ dữ liệu độc lập |    liên quan nhiều data cú pháp khó hơn  |  
 | cập nhật được ít | tốt khi dùng cập nhật trạng thái |  
 
-::: warning
-*tham khảo từ nhiều nguồn trên internet*
-:::
