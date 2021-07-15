@@ -26,7 +26,8 @@ const countSubscribe = () => {
 //dùng Phương thức subscribe() đăng ký hàm callback sẽ được gọi mỗi khi store được cập nhật
 store.subscribe(countSubscribe); //khi gọi phương thức này sẽ gọi hàm  countSubscribe
 
-//Phương thức dispatch() được gọi, store chạy reducer nhận state được cập nhật và chạy các hàm callback được subscribe để cập nhật UI.
+//Phương thức dispatch() được gọi, store chạy reducer nhận state được 
+//cập nhật và chạy các hàm callback được subscribe để cập nhật UI.
 
 store.dispatch({ type: "increment" }); //hành động tăng
 store.dispatch({ type: "decrement" }); // thực hiện hành động giảm
