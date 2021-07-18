@@ -11,8 +11,8 @@ const Counter = () => {
     dispatch(counterActions.toggleCounter());
   };
   //Hook này cho phép chúng ta lấy state từ Redux store bằng cách sử dụng một
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
   const incrementHandler = () => {
     // dispatch({ type: "increment" });
     dispatch(counterActions.increment());
