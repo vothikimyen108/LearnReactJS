@@ -1,17 +1,30 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Route } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+
+import ProductDetail from "./pages/ProductDetail";
 import Welcome from "./pages/Welcome";
-import Product from "./pages/Product";
+import Products from "./pages/Product";
+import MainHeader from "./Compoment/MainHeader";
+
 function App() {
   return (
-    <div className="App">
-      <Route path="/welcome">
-        <Welcome></Welcome>
-      </Route>
-      <Route path="/product">
-        <Product></Product>
-      </Route>
+    <div>
+      <MainHeader />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/welcome" />
+          </Route>
+          <Route path="/welcome">
+            <Welcome />
+          </Route>
+          <Route path="/products" exact>
+            <Products />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductDetail />
+          </Route>
+        </Switch>
+      </main>
     </div>
   );
 }
