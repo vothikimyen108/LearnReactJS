@@ -14,7 +14,7 @@
 
 **HashRouter**: xử lý các request tĩnh. Sử dụng `hash` của `URL` (window.location.hash) để ghi nhớ mọi thứ.
 **Route**: một ánh xạ (mapping) giữa một URL và một `Component`, khi người dùng truy cập URl thit component nó đc hiển thị.
-
+**Switch**: chứa các Route để render các component kho path khớp.
  Các tham số: 
  -   **path:**  Là đường dẫn trên URL.
  -   **exact:**  Liúp cho route này này chỉ hoạt động nếu URL trên trình duyệt phù hợp tuyệt đối với giá trị của thuộc tính path của nó.
@@ -30,3 +30,11 @@
 **NavLink**: tương tự Link nhưng cho phép thêm style cho active link
 
 **Redirect**: dùng chuyển hướng đến route khác trong ứng dụng, nhưng vẫn duy trì URL cũ.
+**useHisrtory** được sử dụng để thay đổi url, ví dụ như khi bạn đang ở mà hình login chẳng hạn, `\users\login`, sau khi đã authen xong thì cần redirect tới màn dashboard, ta dùng
+ví dụ
+```js
+	const history = useHistory(); 
+	history.push('\dashboard`);
+```
+**Prompt**
+Sử dụng  **API Prompt**  giúp chúng ta ngăn chặn việc điều hướng trực tiếp, giả sử một tác vụ đang được thực hiện,  **user**  muốn điều hướng sang màn hình khác hay thoát khỏi ứng dụng sẽ cần thông qua thêm một bước xác nhận,  **Promp**  được  **render**  như một element bên trong  **React Component**.
