@@ -6,7 +6,7 @@ Triển khai ứng dụng reactjs lên một server thực thông qua các bư�
 
 ### 2. Optimize Code
 
-    Lazy Loading là một kỹ thuật cũ để tối ưu hoá ứng dụng web cũng như ứng dụng di động. Cách hoạt động của nó khá đơn giản - Không hiển thị đối tượng nếu chúng không được xem hoặc không được yêu cầu tại thời điểm đó.
+Lazy Loading là một kỹ thuật cũ để tối ưu hoá ứng dụng web cũng như ứng dụng di động. Cách hoạt động của nó khá đơn giản - Không hiển thị đối tượng nếu chúng không được xem hoặc không được yêu cầu tại thời điểm đó.
 
 ```js
 import React, { Suspense } from "react";
@@ -92,12 +92,15 @@ Sau khi chạy xong đến bước tiếp theo đăng nhập vào firebase bằn
 > firebase login
 
 Hình ảnh minh họa đăng nhập thành công.
+
 ![enter image description here](https://i.ibb.co/fdw9vHT/login.png)Tạo thư mục firebase
 
 > firebase init
 
 sau đó thiếp lập tính năng hosting
+
 ![enter image description here](https://i.ibb.co/Bzcmcmf/init.png)
+
 Cấu hình trang web
 ![enter image description here](https://i.ibb.co/4gTx3jS/anh2.png)
 
