@@ -102,6 +102,7 @@ sau đó thiếp lập tính năng hosting
 ![enter image description here](https://i.ibb.co/Bzcmcmf/init.png)
 
 Cấu hình trang web
+
 ![enter image description here](https://i.ibb.co/4gTx3jS/anh2.png)
 
 ### 5. Configure Server
