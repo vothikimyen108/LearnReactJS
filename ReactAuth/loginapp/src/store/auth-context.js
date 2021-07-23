@@ -1,37 +1,39 @@
 import React, { useState } from "react";
 
-//khai báo ngữ cảnh đầu
-export const AuthContext = React.createContext({
+const AuthContext = React.createContext({
   token: "",
-  isLoggedIn: true,
+  isLoggedIn: false,
   login: (token) => {},
   logout: () => {},
 });
 
-const AuthContextProvider = (props) => {
+export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(null);
 
-  const userIsLoggedIn = !!token; //trả về true nếu token không rỗng
+  let userIsLoggedIn = false;
 
-  const LoginHandler = (token) => {
+  if (token !== null) userIsLoggedIn = true;
+  const loginHandler = (token) => {
     setToken(token);
+    console.log(token);
   };
-  const LogoutHandler = () => {
+
+  const logoutHandler = () => {
     setToken(null);
   };
-  // khai báo các giá trị ban đầu
-  const auThValue = {
+
+  const contextValue = {
     token: token,
     isLoggedIn: userIsLoggedIn,
-    login: LoginHandler,
-    logout: LogoutHandler,
+    login: loginHandler,
+    logout: logoutHandler,
   };
 
   return (
-    <AuthContext.Provider value={auThValue}>
+    <AuthContext.Provider value={contextValue}>
       {props.children}
     </AuthContext.Provider>
   );
 };
 
-export default AuthContextProvider;
+export default AuthContext;
