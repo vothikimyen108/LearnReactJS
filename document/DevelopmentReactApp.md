@@ -93,7 +93,9 @@ Sau khi chạy xong đến bước tiếp theo đăng nhập vào firebase bằn
 
 Hình ảnh minh họa đăng nhập thành công.
 
-![enter image description here](https://i.ibb.co/fdw9vHT/login.png)Tạo thư mục firebase
+![enter image description here](https://i.ibb.co/fdw9vHT/login.png)
+
+Tạo thư mục firebase
 
 > firebase init
 
