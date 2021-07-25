@@ -75,6 +75,7 @@ Trong terminal chạy lệnh để buidl project
 > npm run build
 
 sau khi build thành công trong project nó tạo một thư mục mới build chứa những gì mình build trong project, ảnh minh họa ở dưới.
+
 ![enter image description here](https://i.ibb.co/z2p6vvD/anh1.png)
 
 ### 4. Upload Production Code to Server
@@ -112,5 +113,8 @@ Cấu hình trang web
 Cuối cùng là deloy firebase
 
 > firebase deploy
-> Link sau khi mình build thành công
-> [React App (quotes-1de4b.web.app)](https://quotes-1de4b.web.app/quotes)
+
+Link sau khi mình build thành công
+
+[React App (quotes-1de4b.web.app)]
+(https://quotes-1de4b.web.app/)
