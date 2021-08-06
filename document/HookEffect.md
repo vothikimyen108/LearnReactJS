@@ -54,7 +54,7 @@ function Example() {
     Unmounting
     run useEffect() clean up nếu dependencies thay đổi
 #### Dùng useEffect với điều kiện.
-1.Không khai báo dependencies
+1. Không khai báo dependencies
 
   ý nghĩa nó luôn luôn được thực hiện sau mỗi lần render ví dụ:
 ``` js
@@ -67,7 +67,7 @@ function Example() {
     };
   });
 ```
-2.Để mảng rỗng
+2. Để mảng rỗng
 
 ý nghĩa chạy đúng 1 lần, ví dụ:
 ``` js
@@ -80,7 +80,7 @@ function Example() {
     };
   },[]);
 ```
-3.có dependencies
+3. có dependencies
 
 ý nghĩa chạy 1 lần sau lần render đầu, chạy tiếp nếu dependencies thay đổi
 ``` js

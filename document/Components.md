@@ -44,7 +44,7 @@ Tham khảo từ: https://viblo.asia/p/react-js-hieu-ve-functional-va-class-comp
 Vòng đời của componen gồm 3 giai đoạn:
 **componentDidMount()** : lúc mới tạo ra, add và trong Dom
 **componentDidUpdate()**: Có thay đổi
-** componentWillUnmount()**: Bị hủy nkhỏi khỏi Dom
+**componentWillUnmount()**: Bị hủy khỏi khỏi Dom
 
 Mỗi giai đoạn có các event cần thực hiện
 ![Minion](https://i1.wp.com/programmingwithmosh.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-1.44.28-PM.png?resize=1024%2C567&ssl=1)
